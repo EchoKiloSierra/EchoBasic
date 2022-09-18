@@ -50,26 +50,19 @@ class Token
 		cout << _string; //TEST FUNCTION
 	}
 	
-	bool hasMoreTokens() 
-	{
-		for(int i = 0; i < str_Len; i++) 
-		{
-			lexPos = i;
-			getNextTokenizableObj(untokenized_Str);
-		}
-
-
-´	}
-	
 	char[] getNextTokenizableObj(string castableString)
 	{
-		char* stringAsChar = new char [str_Len + 1];
-		std::strcpy (stringAsChar, castableString);
-
+		char strConv = new char [str_Len + 1];
+		std::strcpy (strConv, castableString);
 	
+		for(int i = 0; i < str_Len; i++)
+	       	{
+			
+		}
 
+		cout << stringAsChar; //TEST FUNCTION	
+		
 		char[] nextTokenizableObj;
-
 
 		return nextTokenizableObj;
 	}
