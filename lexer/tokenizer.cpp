@@ -50,23 +50,28 @@ class Token
 		cout << _string; //TEST FUNCTION
 	}
 	
-	char[] getNextTokenizableObj(string castableString)
+	void tokenizableObjs(string castableString)
 	{
 		char strConv = new char [str_Len + 1];
 		std::strcpy (strConv, castableString);
 	
+		string tempToken_pre = "";
+
 		for(int i = 0; i < str_Len; i++)
 	       	{
 			
+			if(!validToken(tempToken_pre)) //TODO: make validToken bool function with RegEx
+			{
+				tempToken_pre = tempToken_pre.append(strConv[i]);
+			}
+			else if (validToken(tempToken_pre)) 
+			{
+				addToken(tempToken_pre); //TODO: Make addToken() function to add token to parser 
+				tempToken_pre = "";
+			}
+
 		}
-
-		cout << stringAsChar; //TEST FUNCTION	
-		
-		char[] nextTokenizableObj;
-
-		return nextTokenizableObj;
 	}
-	
 	
 	void identifier()
 	{
