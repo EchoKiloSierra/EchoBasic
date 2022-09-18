@@ -1,99 +1,69 @@
 #include <iostream>
+#include <cstring>
 #include <string>
-#include <regex>
-
 #include "tokenizer.h"
 
 using namespace std;
 
-/*int main()  //TEST FUNCTION
+int main() 
 {
-	Lexer lex;
+	Tokenizer tok;
 
-	lex.init("Hello, World");
+	tok.tokenize("3+4-6*5");
+
 	return 0;
-}*/
+}
 
-class Token
+
+char* Tokenizer::tokenize(string str)
 {
-	enum class Type 
-	{
-		identifier,
-		keyword,
-		number,
-		char_,
-		string_,
-		symbol_,
-		operator_,
-		paren_
-	};
 
+	char tokenList[str.length()];
 
-	bool isType(Type type, Type checkType)
-	{
-		return (type == checkType);
-	}
-
-	bool isNotType(Type type, Type checkType)
-	{
-		return(type != checkType);
-	}
-
-};
-
-	void Lexer::init(std::string s) 
-	{
-		string _untokenized_Str = s;
-		int str_Len = _untokenized_Str-length()
-		int lexPos = 0;
-
-		cout << _string; //TEST FUNCTION
-	}
+	char strArray[str.length() + 1];
+	strcpy(strArray, str.c_str());
 	
-	void tokenizableObjs(string castableString)
-	{
-		char strConv = new char [str_Len + 1]; // strConv --> stringConverted (to Char[]) 
-		std::strcpy (strConv, castableString);
-	
-		string tempToken_pre = "";
-
-		for(int i = 0; i < str_Len; i++)
-	       	{
+	for(int i = 0; i < str.length(); i++)
+	{ 
+		switch(strArray[i])
+		{
+			case '0': tokenList[i] = 'N';
+				  break;
+			case '1': tokenList[i] = 'N';
+				  break;
+			case '2': tokenList[i] = 'N';
+				  break;
+			case '3': tokenList[i] = 'N';
+				  break;
+			case '4': tokenList[i] = 'N';
+				  break;
+			case '5': tokenList[i] = 'N';
+				  break;
+			case '6': tokenList[i] = 'N';
+				  break;		
+			case '7': tokenList[i] = 'N';
+				  break;
+			case '8': tokenList[i] = 'N';
+				  break;
+			case '9': tokenList[i] = 'N';
+				  break;
 			
-			if(!validToken(tempToken_pre)) // TODO: make validToken bool function with RegEx
-			{
-				tempToken_pre = tempToken_pre.append(strConv[i]);
-			}
-			else if (validToken(tempToken_pre)) 
-			{
-				addToken(tempToken_pre); // TODO: Make addToken() function to add token to parser 
-				tempToken_pre = "";
-			}
+				  
+			case '+': tokenList[i] = 'O';
+				  break;
+			case '-': tokenList[i] = 'O';
+				  break;
+			case '*': tokenList[i] = 'O';
+				  break;
+			case '/': tokenList[i] = 'O';
+				  break;
 
+			default: break;
 		}
+
 	}
-	
-	void identifier()
-	{
-	}
-	void keyword() 
-	{
-	}
-	void number()
-	{
-	}
-	void char_() 
-	{
-	}
-	void string_() 
-	{
-	}
-	void symbol_() 
-	{
-	}
-	void operator_()
-	{
-	}
-	void paren_() 
-	{
-	}
+
+	cout << tokenList;
+
+	// returns char* of tokens
+}

@@ -2,9 +2,8 @@
 
 using namespace std;
 
-class Lexer
+class Tokenizer
 {
 public:
-	void init(string s);
+	char* tokenize(string str);
 };
-
