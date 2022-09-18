@@ -52,7 +52,7 @@ class Token
 	
 	void tokenizableObjs(string castableString)
 	{
-		char strConv = new char [str_Len + 1];
+		char strConv = new char [str_Len + 1]; // strConv --> stringConverted (to Char[]) 
 		std::strcpy (strConv, castableString);
 	
 		string tempToken_pre = "";
@@ -60,13 +60,13 @@ class Token
 		for(int i = 0; i < str_Len; i++)
 	       	{
 			
-			if(!validToken(tempToken_pre)) //TODO: make validToken bool function with RegEx
+			if(!validToken(tempToken_pre)) // TODO: make validToken bool function with RegEx
 			{
 				tempToken_pre = tempToken_pre.append(strConv[i]);
 			}
 			else if (validToken(tempToken_pre)) 
 			{
-				addToken(tempToken_pre); //TODO: Make addToken() function to add token to parser 
+				addToken(tempToken_pre); // TODO: Make addToken() function to add token to parser 
 				tempToken_pre = "";
 			}
 
