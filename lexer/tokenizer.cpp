@@ -17,12 +17,10 @@ int main()
 }
 
 
-char* Tokenizer::tokenize(string str)
+void Tokenizer::tokenize(string str)
 {
 
 	pair<const char*, int> passPAIR;
-
-	char tokenList[str.length()];
 
 	char strArray[str.length() + 1];
 	strcpy(strArray, str.c_str());
@@ -69,14 +67,14 @@ char* Tokenizer::tokenize(string str)
 				  break;	
 	  			  
 				  
-			case '+': tokenList[i] = 'O';
+/*			case '+': tokenList[i] = 'O';
 				  break;
 			case '-': tokenList[i] = 'O';
 				  break;
 			case '*': tokenList[i] = 'O';
 				  break;
 			case '/': tokenList[i] = 'O';
-				  break;
+				  break;	*/
 
 			default: break;
 		}

@@ -5,7 +5,7 @@ using namespace std;
 class Tokenizer
 {
 public:
-	char* tokenize(string str);
+	void tokenize(string str);
 
 	enum class TOKEN
 	{
