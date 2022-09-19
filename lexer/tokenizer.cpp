@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <string>
+#include <utility>
+
 #include "tokenizer.h"
 
 using namespace std;
@@ -18,36 +20,54 @@ int main()
 char* Tokenizer::tokenize(string str)
 {
 
+	pair<const char*, int> passPAIR;
+
 	char tokenList[str.length()];
 
 	char strArray[str.length() + 1];
 	strcpy(strArray, str.c_str());
 	
+	string convStr = "";
+
 	for(int i = 0; i < str.length(); i++)
 	{ 
+		convStr = strArray[i];
+	
+		
+
 		switch(strArray[i])
 		{
-			case '0': tokenList[i] = 'N';
+			case '0': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
 				  break;
-			case '1': tokenList[i] = 'N';
+			case '1': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
 				  break;
-			case '2': tokenList[i] = 'N';
+			case '2': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
 				  break;
-			case '3': tokenList[i] = 'N';
-				  break;
-			case '4': tokenList[i] = 'N';
-				  break;
-			case '5': tokenList[i] = 'N';
-				  break;
-			case '6': tokenList[i] = 'N';
+			case '3': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;	
+			case '4': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
 				  break;		
-			case '7': tokenList[i] = 'N';
-				  break;
-			case '8': tokenList[i] = 'N';
-				  break;
-			case '9': tokenList[i] = 'N';
-				  break;
-			
+			case '5': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;	
+			case '6': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;		
+			case '7': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;	
+			case '8': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;	
+			case '9': passPAIR.first = {"_number"};
+				  passPAIR.second = stoi(convStr);
+				  break;	
+	  			  
 				  
 			case '+': tokenList[i] = 'O';
 				  break;
@@ -63,7 +83,4 @@ char* Tokenizer::tokenize(string str)
 
 	}
 
-	cout << tokenList;
-
-	// returns char* of tokens
 }
