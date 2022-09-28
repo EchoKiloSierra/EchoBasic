@@ -8,7 +8,7 @@ int main()
 
 }
 
-void Lexer_Main::_lex()
+void Lexer_Main::_lex(std::string input_file)
 {
 
 }

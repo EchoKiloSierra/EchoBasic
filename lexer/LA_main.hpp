@@ -7,12 +7,18 @@ class Lexer_Main
 {
 	public:
 
-		void _lex();
+		void _lex(std::string input_file);
+
+		void triggerNext_Token();
 
 		std::pair <Token::Type,std::string> tokenPair;	
 
 	private:
 		
+		File_Handle file;
+
+		Token token;
+
 		std::string tokenValue;
 
 };
@@ -27,7 +33,7 @@ struct Token
 				   /* * */
 			_accMod,   // public, private
 				   /* * */
-		        _operator, // {}, [], (), +, -, /, *, %
+		        _operator, // {}, [], (), +, -, /, *, %, .
 				   /* * */
 		 	_dataType, // int, char, string, void, class, enum
 				   /* * */
@@ -40,12 +46,12 @@ struct Token
 			_char 	   // Any character in single quotes
 		};
 
-
 };
 
 
 class File_Handle
 {
+
 	public: 
 
 		std::string getFileCont(std::ifstream file);
