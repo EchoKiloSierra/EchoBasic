@@ -9,7 +9,19 @@ class Lexer_Main
 
 		void _lex();
 
-		enum class lexer_tokens 
+		std::pair <Token::Type,std::string> tokenPair;	
+
+	private:
+		
+		std::string tokenValue;
+
+};
+
+struct Token
+{
+	public:
+
+		enum class Type
 		{
 			_keyWord,  // if, else, while, for, return, break
 				   /* * */
@@ -28,9 +40,6 @@ class Lexer_Main
 			_char 	   // Any character in single quotes
 		};
 
-	private:
-
-	std::pair <Lexer_Main::lexer_tokens, std::string> tokenPair;	
 
 };
 
