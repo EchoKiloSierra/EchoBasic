@@ -15,7 +15,7 @@ class Lexer_Main
 				   /* * */
 			_accMod,   // public, private
 				   /* * */
-		        _operator, // {}, [], (), +, -, *, /, %
+		        _operator, // {}, [], (), +, -, /, *, %
 				   /* * */
 		 	_dataType, // int, char, string, void, class, enum
 				   /* * */
