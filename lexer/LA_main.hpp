@@ -30,7 +30,7 @@ class Lexer_Main
 
 	private:
 
-	std::pair <Lexer_Main::lexer_tokens, char*> tokenPair;	
+	std::pair <Lexer_Main::lexer_tokens, std::string> tokenPair;	
 
 };
 
