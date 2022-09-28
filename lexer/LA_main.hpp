@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include <iostream> #include <string>
 #include <fstream>
 #include <utility>
 
@@ -20,6 +19,25 @@ class Lexer_Main
 		Token token;
 
 		std::string tokenValue;
+
+		Lexer_Lex lexer;
+
+};
+
+class Lexer_Lex
+{
+	public:
+
+		void lexString(std::string fileCont);
+	
+
+	private:
+
+		std::pair <Token::Type,std::string> tokenPair;	
+
+		Token token;
+
+		str::string tokenValue;
 
 };
 
